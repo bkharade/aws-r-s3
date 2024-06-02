@@ -14,6 +14,7 @@ phases:
       - echo Build started on `date`
       - echo building the tar file
       - ls
+      - chmod +x go.sh
       - ./go.sh
       - echo loading the Docker image...
       - docker load < demo-r-ecs.tar.gz
