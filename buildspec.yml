@@ -17,8 +17,8 @@ phases:
       - chmod +x go.sh
       - ./go.sh
       - echo loading the Docker image...
-      - docker load < demo-r-ecs.tar.gz
-      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - docker load < demo-r-s3.tar.gz
+      - docker tag demo-r-s3 $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`

@@ -1,6 +1,6 @@
 FROM rocker/r-ver:4.3
 
-RUN apt-get update && apt-get install -y git-core libssl-dev libcurl4-gnutls-dev curl libsodium-dev libz-dev libxml2-dev
+RUN apt-get update && apt-get install -y git-core libssl-dev libcurl4-gnutls-dev curl libsodium-dev libz-dev libxml2-dev zip unzip
 
 RUN rm -rf /var/lib/apt/lists/*
 
