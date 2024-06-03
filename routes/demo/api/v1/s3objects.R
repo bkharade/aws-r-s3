@@ -9,7 +9,7 @@ download_s3_file <- function(s3, reqData) {
 
     download_path = '/mnt/s3'
 
-    downloaded_file_name <- paste(download_path,paste(reqData$file_name,"_"),"/")
+    downloaded_file_name <- paste(download_path,reqData$file_name,seq="/")
     log_info(paste0("writing file with filename::" ,downloaded_file_name))
     tryCatch ({
         writeBin(s3_download$Body, con = downloaded_file_name)
@@ -18,7 +18,7 @@ download_s3_file <- function(s3, reqData) {
         message("here's the original message:")
         message(conditionMessage(cond))
     },finally = {
-        log_info(pasteO("returning file with fileName::",downloaded_file_name))
+        log_info(paste0("returning file with fileName::",downloaded_file_name))
         return (downloaded_file_name)
     })
 }
