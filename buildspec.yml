@@ -25,7 +25,7 @@ phases:
       - echo Build completed on `date`
       - echo pushing to repo
       - docker push $REPOSITORY_URI:latest
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      #- docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - aws ecs update-service --cluster demo-cluster --service demo-r-s3-service --region us-east-2 --force-new-deployment
       
