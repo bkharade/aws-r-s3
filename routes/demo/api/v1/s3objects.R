@@ -31,7 +31,7 @@ function(req,res)
 {
     log_info("/data/preview called")
     s3 <- get_storage_client()
-    s3_file <- download_s3_file(s3,reqData)
+    s3_file <- download_s3_file(s3,req$body)
     log_info(paste0("in preview calling the preview for file with filename::",s3_file))
     dataDM <- haven::read.csv(s3_file)
 
