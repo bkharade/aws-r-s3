@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y git-core libssl-dev libcurl4-gnutls-dev
 
 RUN rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /mnt
+RUN mkdir -p /mnt/s3
 RUN chmod ugo+w -R /mnt
 
 RUN Rscript -e "install.packages('pak' , repos = sprintf('https://r-lib.github.io/p/pak/stable'))"
