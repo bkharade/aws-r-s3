@@ -7,9 +7,9 @@ download_s3_file <- function(s3, reqData) {
     
     s3_download <- s3$get_object( Bucket = reqData$bucket_name, Key = reqData$file_name)
 
-    download_path <- '/mnt/s3'
+    download_path <- '/mnt/s3/'
 
-    downloaded_file_name <- paste(download_path,reqData$file_name,seq="/")
+    downloaded_file_name <- paste0(download_path,reqData$file_name)
     log_info(paste0("writing file with filename::" ,downloaded_file_name))
     tryCatch ({
         writeBin(s3_download$Body, con = downloaded_file_name)
@@ -37,4 +37,3 @@ function(req,res)
 
     return(head(dataDM, 100))
 }
-
