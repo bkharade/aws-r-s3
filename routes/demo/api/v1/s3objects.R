@@ -33,7 +33,7 @@ function(req,res)
     s3 <- get_storage_client()
     s3_file <- download_s3_file(s3,req$body)
     log_info(paste0("in preview calling the preview for file with filename::",s3_file))
-    dataDM <- read.csv(s3_file,header = FASLE )
+    dataDM <- read.csv(s3_file,header = FALSE )
 
     return(head(dataDM, 100))
 }
